@@ -1,7 +1,7 @@
 {
   "name": "Vite-React-Docker-Kubernetes",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:18",
-  "postCreateCommand": "npm install",
+  "postCreateCommand": "cd react-in-containers && npm install",
   "features": {
     "docker-in-docker": "latest"
   },
@@ -21,15 +21,10 @@
       ]
     }
   },
-  "settings": {
-    "terminal.integrated.defaultProfile.linux": "bash"
-  },
   "forwardPorts": [3000, 8080],
   "mounts": [
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
   ],
-  "containerEnv": {
-    "MINIKUBE_IN_STYLE": "true"
-  },
-  "onCreateCommand": "minikube start"
+  "remoteUser": "root",
+  "onCreateCommand": "/workspaces/react-in-containers/setup.sh"
 }
