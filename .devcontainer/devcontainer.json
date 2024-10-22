@@ -31,6 +31,5 @@
   "containerEnv": {
     "MINIKUBE_IN_STYLE": "true"
   },
-  "remoteUser": "vscode",
   "onCreateCommand": "minikube start"
 }
