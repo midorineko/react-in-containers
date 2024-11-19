@@ -11,7 +11,7 @@ RUN npm install
 # Copy the rest of the application code to the container
 COPY . .
 
-# Build the Vite app for production
+# Build the TypeScript code
 RUN npm run build
 
 # Use nginx to serve the app
